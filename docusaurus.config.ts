@@ -73,23 +73,40 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: '[Your Name]', // Changed title
+      hideOnScroll: false,
+      title: 'Patricio Cordeiro',
       logo: {
-        alt: '[Your Name] Logo', // Changed logo alt text
-        src: 'img/logo.svg', // You'll probably want to replace this (optional)
+        alt: 'PC Logo',
+        src: 'img/logo.svg', // Make sure you have a logo in static/img
       },
+      // --- REPLACE THE ENTIRE 'items' ARRAY WITH THIS ---
       items: [
         {
-          type: 'docSidebar', // Assuming a general docs sidebar for portfolio content.  If you don't want a tutorial, change to "left" or remove.
-          sidebarId: 'tutorialSidebar', // Adjust sidebar ID if needed.
+          label: 'Services',
+          to: '/#services', // Links to the section with id="services"
           position: 'left',
-          label: 'About', // Changed label, might also say "Projects"
         },
-        // Remove Blog
         {
-          href: 'https://github.com/patriciocordeiro/portfolio', // Point to your repo.
-          label: 'GitHub',
+          label: 'Process',
+          to: '/#process', // Links to the section with id="process"
+          position: 'left',
+        },
+        {
+          label: 'Case Studies',
+          to: '/#projects', // Links to the section with id="projects"
+          position: 'left',
+        },
+        {
+          label: 'Advantage',
+          to: '/#advantage', // Links to the section with id="advantage"
+          position: 'left',
+        },
+        {
+          // This is a styled "button" link for the final CTA
+          label: 'Contact',
+          to: '/#contact',
           position: 'right',
+          className: 'navbar-contact-button', // Custom class for styling
         },
       ],
     },

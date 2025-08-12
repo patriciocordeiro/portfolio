@@ -1,13 +1,23 @@
 /* src/components/Services.module.css */
 .services {
   padding: 4rem 2rem;
+  /* --- NEW: Animation setup for the entire section --- */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* --- NEW: The visible state for the section --- */
+.services.isVisible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .container {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 300px 1fr; /* Left column for tabs, right for content */
+  grid-template-columns: 300px 1fr;
   gap: 3rem;
   background: var(--glass-bg);
   border: 1px solid var(--border-color);
@@ -118,19 +128,19 @@
   }
 }
 
-/* Responsive adjustments for smaller screens */
+/* Responsive adjustments */
 @media (max-width: 996px) {
   .container {
-    grid-template-columns: 1fr; /* Stack on top of each other */
+    grid-template-columns: 1fr;
     padding: 1.5rem;
   }
   .serviceTabs {
-    flex-direction: row; /* Make tabs horizontal */
+    flex-direction: row;
     border-right: none;
     border-bottom: 1px solid var(--border-color);
     padding-right: 0;
     padding-bottom: 1.5rem;
-    overflow-x: auto; /* Allow scrolling for many tabs */
+    overflow-x: auto;
   }
   .tabButton {
     flex-direction: column;

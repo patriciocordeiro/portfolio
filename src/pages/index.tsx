@@ -4,7 +4,7 @@ import Layout from '@theme/Layout';
 import HeroSection from '../components/HeroSection/HeroSection';
 
 import ProjectsSection from '../components/ProjectsSection/ProjectsSection';
-import ServicesSection from '../components/ServicesSection/ServicesSection';
+import ServicesSection from '../components/ServicesSection/Services';
 import CollaborationBlueprint from '../components/CollaborationBlueprint/CollaborationBlueprint';
 import PartnershipAdvantage from '../components/PartnershipAdvantage/PartnershipAdvantage';
 import AboutMe from '../components/AboutMe/AboutMe';

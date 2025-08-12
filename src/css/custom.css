@@ -72,3 +72,18 @@ h6 {
   color: var(--color-primary);
   text-shadow: 0 0 10px var(--color-primary-shadow);
 }
+
+.navbar-contact-button {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-contact-button:hover {
+  background-color: var(--color-primary);
+  color: var(--background-color);
+  text-decoration: none;
+}

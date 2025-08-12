@@ -1,16 +1,30 @@
-import React, { JSX, useState } from 'react';
-import styles from './ServicesSection.module.css';
+import React, { useState, useEffect, useRef, JSX } from 'react';
+import styles from './Services.module.css';
 import { FaRocket, FaMobileAlt, FaTools, FaCogs } from 'react-icons/fa';
 
-// Expanded interface to include specific deliverables for each service
-interface Service {
-  Icon: React.ElementType;
-  title: string;
-  description: React.ReactNode;
-  deliverables: string[];
+// Custom Hook to detect when an element is on screen
+// It's good practice to define this in a separate file if used by many components,
+// but for simplicity, we can include it here.
+function useOnScreen(ref: React.RefObject<HTMLElement>) {
+  const [isIntersecting, setIntersecting] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIntersecting(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [ref]);
+  return isIntersecting;
 }
 
-const services: Service[] = [
+const services = [
   {
     Icon: FaRocket,
     title: 'Full Application Build',
@@ -69,11 +83,19 @@ export default function Services(): JSX.Element {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeService = services[activeIndex];
 
+  // --- NEW: Refs and logic for the outer animation ---
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isVisible = useOnScreen(sectionRef);
+
   return (
-    <section id='services' className={styles.services}>
+    <section
+      id='services'
+      ref={sectionRef}
+      // --- NEW: Apply animation class when visible ---
+      className={`${styles.services} ${isVisible ? styles.isVisible : ''}`}>
       <h2 className='section-title'>How I Can Help You Succeed</h2>
+
       <div className={styles.container}>
-        {/* Left Side: The Navigation Tabs */}
         <div className={styles.serviceTabs}>
           {services.map((service, index) => (
             <button
@@ -88,8 +110,7 @@ export default function Services(): JSX.Element {
           ))}
         </div>
 
-        {/* Right Side: The Content Display */}
-        <div className={styles.serviceContent}>
+        <div key={activeIndex} className={styles.serviceContent}>
           <activeService.Icon className={styles.contentIcon} />
           <h3>{activeService.title}</h3>
           <p className={styles.description}>{activeService.description}</p>

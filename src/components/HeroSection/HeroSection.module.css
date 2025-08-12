@@ -3,19 +3,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
-  padding: 2.5rem;
-  text-align: left;
+  min-height: 90vh; /* Reduced slightly for text-only focus */
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
 .heroContainer {
   max-width: 950px;
 }
 
+/* Kept here in case you want to re-add the image later */
 .imageContainer {
   margin-bottom: 2.5rem;
 }
-
 .profileImage {
   width: 180px;
   height: 180px;
@@ -28,27 +28,35 @@
 .textContainer {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
-/* --- NEW STYLE FOR THE INTRO TEXT --- */
 .introText {
-  font-size: 2.5rem;
   font-family: 'Orbitron', sans-serif;
   color: var(--color-primary);
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 1px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   display: block;
 }
 
 .headline {
   font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-color-primary);
+  /* height: 140px; */
+}
+.subHeadline {
+  font-family: 'Orbitron', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.4;
   color: var(--text-color-primary);
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 2rem; */
+  height: 140px; /* Allocate space to prevent layout shift during animation */
 }
 
 .tagline {
@@ -56,5 +64,41 @@
   color: var(--text-color-secondary);
   line-height: 1.7;
   max-width: 750px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px var(--color-primary-shadow);
+}
+
+.ctaButton:hover {
+  background-color: var(--color-primary);
+  color: #040622; /* Use the dark background color for text */
+  box-shadow: 0 0 25px var(--color-primary-shadow);
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .headline {
+    font-size: 2.2rem;
+    height: 160px; /* Adjust height for mobile */
+  }
+  .tagline {
+    font-size: 1.1rem;
+  }
 }

@@ -62,7 +62,7 @@ export default function CollaborationBlueprint(): JSX.Element {
   const isVisible = useOnScreen(containerRef);
 
   return (
-    <section className={styles.blueprint}>
+    <section className={styles.blueprint} id='process'>
       <div className={styles.intro}>
         <h2 className='section-title'>My Collaboration Blueprint</h2>
         <p className={styles.subtitle}>

@@ -56,7 +56,7 @@ export default function PartnershipAdvantage(): JSX.Element {
   const isVisible = useOnScreen(diagramRef);
 
   return (
-    <section className={styles.advantageSection}>
+    <section className={styles.advantageSection} id='advantage'>
       <div className={styles.intro}>
         <h2 className='section-title'>The Partnership Advantage</h2>
         <p className={styles.subtitle}>
