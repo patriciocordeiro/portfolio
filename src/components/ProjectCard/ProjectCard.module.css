@@ -1,0 +1,53 @@
+.projectCard {
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.projectImage {
+  width: 100%;
+  height: 200px; /* Adjust height as needed */
+  object-fit: cover; /* Maintain aspect ratio and cover the space */
+}
+
+.projectInfo {
+  padding: 15px;
+  color: white;
+}
+
+.projectTitle {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.projectDescription {
+  line-height: 1.5;
+}
+
+.projectLinks {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-around; /* Or space-between, depending on your layout */
+}
+
+.projectLink {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.projectLink:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}

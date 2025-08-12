@@ -1,0 +1,6 @@
+/* src/components/Highlight.module.css */
+.highlight {
+  color: var(--color-primary); /* Use the primary teal for highlights */
+  font-weight: 500;
+  text-shadow: 0 0 8px var(--color-primary-shadow);
+}

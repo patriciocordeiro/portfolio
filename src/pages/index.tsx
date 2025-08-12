@@ -1,43 +1,30 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+// src/pages/index.tsx
+import React, { JSX } from 'react';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
+import HeroSection from '../components/HeroSection/HeroSection';
 
-import styles from './index.module.css';
+import ProjectsSection from '../components/ProjectsSection/ProjectsSection';
+import ServicesSection from '../components/ServicesSection/ServicesSection';
+import CollaborationBlueprint from '../components/CollaborationBlueprint/CollaborationBlueprint';
+import PartnershipAdvantage from '../components/PartnershipAdvantage/PartnershipAdvantage';
+import AboutMe from '../components/AboutMe/AboutMe';
+import ContactForm from '../components/ContactForm/ContactForm';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+export default function Home(): JSX.Element {
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+      title='Patricio Cordeiro - Freelance Tech Lead & Architect'
+      description='Expert freelance developer delivering high-impact digital solutions with React, Angular, Node.js, and AI.'>
       <main>
-        <HomepageFeatures />
+        <HeroSection />
+        <ServicesSection />
+        <CollaborationBlueprint />
+        {/* <WhatIDeliver /> */}
+        <ProjectsSection />
+        {/* <WhyMeSection /> */}
+        <PartnershipAdvantage />
+        <AboutMe />
+        <ContactForm />
       </main>
     </Layout>
   );

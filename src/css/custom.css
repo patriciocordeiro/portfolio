@@ -1,30 +1,74 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/* src/css/custom.css */
 
-/* You can override the default Infima variables here. */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400&display=swap');
+
+/* --- UNIVERSAL VARIABLES --- */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --color-primary: #5eead4; /* The smooth teal */
+  --color-primary-darker: #2dd4bf;
+  --color-primary-shadow: rgba(94, 234, 212, 0.5);
+  --color-secondary: #ff00c1; /* Electric Magenta for Highlight component */
+  --color-secondary-shadow: rgba(255, 0, 193, 0.7);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+/*
+================================================================================
+  DARK THEME (Default)
+================================================================================
+*/
+html[data-theme='dark'] {
+  --background-color: #040622; /* YOUR CHOSEN BACKGROUND COLOR */
+  --text-color-primary: #e2e8f0;
+  --text-color-secondary: #94a3b8;
+  --glass-bg: rgba(15, 23, 42, 0.5);
+  --border-color: rgba(94, 234, 212, 0.2);
+}
+
+/*
+================================================================================
+  LIGHT THEME
+================================================================================
+*/
+html[data-theme='light'] {
+  --background-color: #f8fafc;
+  --text-color-primary: #040622; /* Use your dark blue for text in light mode */
+  --text-color-secondary: #475569;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --border-color: rgba(94, 234, 212, 0.4);
+}
+
+/*
+================================================================================
+  GLOBAL STYLES
+================================================================================
+*/
+
+html,
+body {
+  background-color: var(--background-color);
+  color: var(--text-color-primary);
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--text-color-primary);
+  text-shadow: none;
+}
+
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  text-shadow: 0 0 10px var(--color-primary-shadow);
 }

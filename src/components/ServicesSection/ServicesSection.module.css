@@ -1,0 +1,150 @@
+/* src/components/Services.module.css */
+.services {
+  padding: 4rem 2rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr; /* Left column for tabs, right for content */
+  gap: 3rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.serviceTabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-right: 1px solid var(--border-color);
+  padding-right: 2rem;
+}
+
+.tabButton {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-color-secondary);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  border-left: 3px solid transparent;
+}
+
+.tabIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.tabButton:hover {
+  background-color: rgba(94, 234, 212, 0.05);
+  color: var(--text-color-primary);
+}
+
+.tabButton.active {
+  background-color: rgba(94, 234, 212, 0.1);
+  color: var(--color-primary);
+  border-left: 3px solid var(--color-primary);
+  font-weight: bold;
+}
+
+.serviceContent {
+  padding-left: 1rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.contentIcon {
+  font-size: 3.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 10px var(--color-primary-shadow));
+}
+
+.serviceContent h3 {
+  color: var(--text-color-primary);
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: var(--text-color-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.deliverablesList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.deliverablesList li {
+  position: relative;
+  padding-left: 1.75rem;
+  color: var(--text-color-primary);
+}
+
+.deliverablesList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 996px) {
+  .container {
+    grid-template-columns: 1fr; /* Stack on top of each other */
+    padding: 1.5rem;
+  }
+  .serviceTabs {
+    flex-direction: row; /* Make tabs horizontal */
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    overflow-x: auto; /* Allow scrolling for many tabs */
+  }
+  .tabButton {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+  .tabButton.active {
+    border-left: none;
+    border-bottom: 3px solid var(--color-primary);
+  }
+  .serviceContent {
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+}

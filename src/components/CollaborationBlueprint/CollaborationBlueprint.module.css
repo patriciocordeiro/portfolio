@@ -1,0 +1,154 @@
+/* src/components/CollaborationBlueprint.module.css */
+.blueprint {
+  padding: 6rem 2rem;
+  background-color: rgba(4, 6, 34, 0.7);
+  overflow: hidden; /* Prevent animations from showing before they should */
+}
+
+.intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem auto;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-color-secondary);
+  line-height: 1.7;
+  margin-top: -3rem;
+}
+
+.stepsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  gap: 2rem 4rem;
+}
+
+/* The connecting line in the background */
+.stepsContainer::before {
+  content: '';
+  position: absolute;
+  top: 35px; /* Aligns with the center of the first icon */
+  left: 50%;
+  bottom: 35px;
+  width: 2px;
+  background: linear-gradient(
+    var(--border-color),
+    var(--color-primary),
+    var(--border-color)
+  );
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.stepsContainer.animate::before {
+  opacity: 1;
+}
+
+.stepCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  position: relative;
+  z-index: 1;
+
+  /* --- Animation setup --- */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Trigger the animation when the container is visible */
+.stepsContainer.animate .stepCard {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Horizontal line pointing to the center */
+.stepCard::after {
+  content: '';
+  position: absolute;
+  top: 35px;
+  width: 2rem; /* Half the gap width */
+  height: 2px;
+  background-color: var(--border-color);
+}
+
+/* Alternating staircase layout */
+.stepCard:nth-child(odd) {
+  grid-column: 1;
+  text-align: right;
+}
+.stepCard:nth-child(odd)::after {
+  right: -2rem;
+}
+
+.stepCard:nth-child(even) {
+  grid-column: 2;
+  text-align: left;
+}
+.stepCard:nth-child(even)::after {
+  left: -2rem;
+}
+
+.iconWrapper {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 1.5rem;
+  display: inline-flex; /* Changed from flex to allow text-align to work */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(94, 234, 212, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.iconWrapper svg {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.stepCard h3 {
+  color: var(--text-color-primary);
+  margin-bottom: 1rem;
+}
+
+.stepCard p {
+  color: var(--text-color-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stepsContainer {
+    grid-template-columns: 1fr; /* Stack into a single column */
+    gap: 2.5rem 0;
+  }
+  .stepsContainer::before {
+    left: 35px; /* Move the line to the left */
+    transform: translateX(0);
+  }
+  .stepCard:nth-child(odd),
+  .stepCard:nth-child(even) {
+    grid-column: 1;
+    text-align: left;
+    padding-left: 60px; /* Make space for the icon on the line */
+  }
+  .stepCard::after {
+    display: none; /* Hide horizontal lines on mobile */
+  }
+  .iconWrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 70px;
+  }
+}

@@ -1,0 +1,158 @@
+/* src/components/ContactForm.module.css */
+.contact {
+  padding: 6rem 2rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-color-secondary);
+  line-height: 1.7;
+  margin-top: -3rem;
+}
+
+.formContainer {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--glass-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.formTitle {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: var(--text-color-primary);
+  font-size: 1.2rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  color: var(--text-color-primary);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px var(--color-primary-shadow);
+}
+
+.submitButton {
+  width: 100%;
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  color: #040622; /* Dark text for solid button */
+  padding: 1rem 2rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px var(--color-primary-shadow);
+}
+
+/* === DIRECT CONTACT STYLES === */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 2.5rem 0;
+  color: var(--text-color-secondary);
+  font-size: 0.9rem;
+  font-family: 'Orbitron', sans-serif;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+.divider:not(:empty)::before {
+  margin-right: 1em;
+}
+.divider:not(:empty)::after {
+  margin-left: 1em;
+}
+
+.directContactText {
+  color: var(--text-color-secondary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--text-color-primary);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.iconButton svg {
+  font-size: 1.5rem;
+}
+
+.iconButton:hover {
+  transform: translateY(-3px);
+  color: #fff;
+}
+
+.whatsapp:hover {
+  background-color: #25d366;
+  border-color: #25d366;
+  box-shadow: 0 0 15px #25d366;
+}
+
+.linkedin:hover {
+  background-color: #0a66c2;
+  border-color: #0a66c2;
+  box-shadow: 0 0 15px #0a66c2;
+}

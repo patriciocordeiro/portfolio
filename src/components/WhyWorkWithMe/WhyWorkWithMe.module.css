@@ -1,0 +1,55 @@
+/* src/components/WhyWorkWithMe.module.css */
+.whyMe {
+  padding: 6rem 2rem;
+  background-color: var(
+    --background-color
+  ); /* Use the main background to set it apart */
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 2.5rem; /* Vertical and horizontal gap */
+}
+
+.reasonCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.iconWrapper svg {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  filter: drop-shadow(0 0 8px var(--color-primary-shadow));
+}
+
+.textWrapper h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: var(--text-color-primary);
+}
+
+.textWrapper p {
+  color: var(--text-color-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 996px) {
+  .grid {
+    grid-template-columns: 1fr; /* Stack into a single column on medium screens */
+  }
+}

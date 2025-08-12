@@ -1,0 +1,82 @@
+/* src/components/AboutMe.module.css */
+.aboutSection {
+  padding: 6rem 2rem;
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--glass-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+}
+
+.bioContainer {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.bioText {
+  color: var(--text-color-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0 0 1.5rem 0;
+}
+
+.bioText:last-child {
+  margin-bottom: 0;
+}
+
+.skillsTitle {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--text-color-primary);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.category h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techTag {
+  background-color: rgba(94, 234, 212, 0.1);
+  color: var(--color-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .categoriesGrid {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    padding: 2rem;
+  }
+}

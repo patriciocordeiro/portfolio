@@ -1,0 +1,25 @@
+.aboutSection {
+  padding: 50px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+.aboutContainer {
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionTitle {
+  font-size: 2.5em;
+  margin-bottom: 0.8em;
+  font-weight: bold;
+}
+
+.aboutContent {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}

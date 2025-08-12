@@ -1,0 +1,84 @@
+/* src/components/WhatIDeliver.module.css */
+.deliverables {
+  padding: 4rem 2rem;
+  position: relative;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.card {
+  background: var(--glass-bg);
+  border-radius: 10px;
+  padding: 2px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.cardContent {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  height: 100%;
+}
+.icon {
+  font-size: 3.5rem;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 155, 0.7));
+}
+.card h3 {
+  transition: color 0.3s ease-in-out;
+}
+.card p {
+  color: #a0aec0;
+  transition: color 0.3s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    var(--color-secondary) 50%,
+    transparent 60%
+  );
+  animation: rotate 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.card:hover::before {
+  opacity: 1;
+}
+.card:hover .icon {
+  color: var(--color-secondary);
+  filter: drop-shadow(0 0 15px var(--color-secondary-shadow));
+  transform: scale(1.1);
+}
+.card:hover h3 {
+  color: var(--color-secondary);
+  text-shadow: 0 0 8px var(--color-secondary-shadow);
+}
+.card:hover p {
+  color: var(--text-color);
+}
+@keyframes rotate {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
